@@ -1,0 +1,75 @@
+<div class="container-fluid  text-center">
+    <br><br>
+    <form class="row g-3" (ngSubmit)="guardar()" [formGroup]="forma">
+        <div class="col-md-4">
+            <label for="nombre" class="form-label">Nombre del paciente</label>
+            <input type="text" class="form-control" id="nombre" formControlName="paciente" [class.is-invalid]="pacienteNovalido">
+            <small *ngIf="pacienteNovalido" class="text-danger">Ingrese el nombre del paciente al menos 6 letras</small>
+        </div>
+        <div class="col-md-4">
+            <label for="medico" class="form-label">Medico</label>
+            <input type="text" class="form-control" id="medico" formControlName="medico" [class.is-invalid]="medicoNovalido">
+            <small *ngIf="medicoNovalido" class="text-danger">Ingrese el nombre del medico al menos 6 letras</small>
+        </div>
+        <div class="row"></div>
+
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Tipo de cita</label>
+            <select id="tipo" class="form-select" formControlName="tipo" [class.is-invalid]="tipoNovalido">
+        <option selected >Seleccione...</option>
+        <option>Consulta</option>
+        <option>Servicio</option>
+        <option>Tratamiento</option>
+      </select>
+            <small *ngIf="tipoNovalido" class="text-danger">Seleccione una opción</small>
+        </div>
+        <div class="col-md-2">
+            <label for="inputCity" class="form-label">Fecha</label><br>
+            <input type="date" id="fecha" name="fecha" class="form-select" formControlName="fecha" [class.is-invalid]="fechaNovalido">
+            <small *ngIf="fechaNovalido" class="text-danger">Seleccione una fecha</small>
+        </div>
+        <div class="col-md-2">
+            <label for="inputState" class="form-label">Hora de la Cita</label>
+            <select id="hora" class="form-select" formControlName="hora" [class.is-invalid]="horaNovalido">
+        <option selected >Seleccione...</option>
+        <option>8:00</option>
+        <option>8:30</option>
+        <option>9:00</option>
+        <option>9:30</option>
+        <option>10:00</option>
+        <option>10:30</option>
+        <option>11:00</option>
+        <option>11:30</option>
+        <option>12:00</option>
+        <option>12:30</option>
+        <option>13:00</option>
+        <option>13:30</option>
+        <option>14:00</option>
+        <option>14:30</option>
+        <option>15:00</option>
+        <option>15:30</option>
+        <option>16:00</option>
+        <option>16:30</option>
+        <option>17:00</option>
+        <option>17:30</option>
+        <option>18:00</option>
+        <option>18:30</option>
+        <option>19:00</option>
+        <option>19:30</option>
+        <option>20:00</option>
+        <option>20:30</option>
+      </select>
+            <small *ngIf="horaNovalido" class="text-danger">Seleccione una hora</small>
+        </div>
+        <div class="row g-3 center">
+
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary" style="background-color:#a25cbf;">Agendar</button>
+            </div>
+            <div class="col-4">
+                <a (click)="regresar()" type="button" class="btn btn-info" style="background-color:#a25cbf;">Regresar</a>
+            </div>
+        </div>
+
+    </form>
+</div>
